@@ -1,0 +1,224 @@
+$date
+     Apr 13, 2021       15:55:13
+$end
+
+$version
+ SystemC 2.3.3-Accellera --- Mar 22 2020 15:59:11
+$end
+
+$timescale
+     1 ps
+$end
+
+$scope module SystemC $end
+$var wire    8  aaaaa  w_data_i [7:0]  $end
+$var wire    8  aaaab  w_data_o [7:0]  $end
+$var wire    1  aaaac  w_clk_i       $end
+$var wire    1  aaaad  w_rst_i       $end
+$var wire    1  aaaae  w_val_i       $end
+$var wire    1  aaaaf  w_wok_i       $end
+$var wire    1  aaaag  w_ack_o       $end
+$var wire    1  aaaah  w_wr_o       $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+b0 aaaaa
+b0 aaaab
+1aaaac
+1aaaad
+0aaaae
+0aaaaf
+0aaaag
+0aaaah
+$end
+
+#500
+0aaaac
+
+#1000
+b1 aaaaa
+b1 aaaab
+1aaaac
+0aaaad
+1aaaae
+1aaaaf
+
+#1500
+0aaaac
+
+#2000
+1aaaac
+0aaaaf
+1aaaag
+1aaaah
+
+#2500
+0aaaac
+
+#3000
+b11 aaaaa
+b11 aaaab
+1aaaac
+0aaaae
+1aaaaf
+0aaaah
+
+#3500
+0aaaac
+
+#4000
+1aaaac
+0aaaaf
+0aaaag
+
+#4500
+0aaaac
+
+#5000
+b111 aaaaa
+b111 aaaab
+1aaaac
+1aaaae
+1aaaaf
+
+#5500
+0aaaac
+
+#6000
+1aaaac
+0aaaaf
+1aaaag
+1aaaah
+
+#6500
+0aaaac
+
+#7000
+b1111 aaaaa
+b1111 aaaab
+1aaaac
+0aaaae
+1aaaaf
+0aaaah
+
+#7500
+0aaaac
+
+#8000
+1aaaac
+0aaaaf
+0aaaag
+
+#8500
+0aaaac
+
+#9000
+b11111 aaaaa
+b11111 aaaab
+1aaaac
+1aaaae
+1aaaaf
+
+#9500
+0aaaac
+
+#10000
+1aaaac
+0aaaaf
+1aaaag
+1aaaah
+
+#10500
+0aaaac
+
+#11000
+b111111 aaaaa
+b111111 aaaab
+1aaaac
+0aaaae
+1aaaaf
+0aaaah
+
+#11500
+0aaaac
+
+#12000
+1aaaac
+0aaaaf
+0aaaag
+
+#12500
+0aaaac
+
+#13000
+b1111111 aaaaa
+b1111111 aaaab
+1aaaac
+1aaaae
+1aaaaf
+
+#13500
+0aaaac
+
+#14000
+1aaaac
+0aaaaf
+1aaaag
+1aaaah
+
+#14500
+0aaaac
+
+#15000
+b11111111 aaaaa
+b11111111 aaaab
+1aaaac
+0aaaae
+1aaaaf
+0aaaah
+
+#15500
+0aaaac
+
+#16000
+1aaaac
+0aaaaf
+0aaaag
+
+#16500
+0aaaac
+
+#17000
+b0 aaaaa
+b0 aaaab
+1aaaac
+1aaaae
+1aaaaf
+
+#17500
+0aaaac
+
+#18000
+1aaaac
+0aaaaf
+1aaaag
+1aaaah
+
+#18500
+0aaaac
+
+#19000
+1aaaac
+0aaaae
+1aaaaf
+0aaaah
+
+#19500
+0aaaac
+
+#20000
