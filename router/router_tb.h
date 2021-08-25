@@ -3,44 +3,43 @@
 
 #define x_id_p 0
 #define y_id_p 1
-#define data_width_p 8
 SC_MODULE(router_tb){
 
     sc_clock clk_i;
     sc_signal<sc_bv<1>> rst_i;
 
-    sc_signal<sc_bv<data_width_p>> l_in_data_i;
+    sc_signal<sc_bv<link_width_p>> l_in_data_i;
     sc_signal<sc_bv<1>> l_in_val_i;
     sc_signal<sc_bv<1>> l_in_ack_o;
-    sc_signal<sc_bv<data_width_p>> l_out_data_o;
+    sc_signal<sc_bv<link_width_p>> l_out_data_o;
     sc_signal<sc_bv<1>> l_out_val_o;
     sc_signal<sc_bv<1>> l_out_ack_i;
-    sc_signal<sc_bv<data_width_p>> n_in_data_i;
+    sc_signal<sc_bv<link_width_p>> n_in_data_i;
     sc_signal<sc_bv<1>> n_in_val_i;
     sc_signal<sc_bv<1>> n_in_ack_o;
-    sc_signal<sc_bv<data_width_p>> n_out_data_o;
+    sc_signal<sc_bv<link_width_p>> n_out_data_o;
     sc_signal<sc_bv<1>> n_out_val_o;
     sc_signal<sc_bv<1>> n_out_ack_i;
-    sc_signal<sc_bv<data_width_p>> e_in_data_i;
+    sc_signal<sc_bv<link_width_p>> e_in_data_i;
     sc_signal<sc_bv<1>> e_in_val_i;
     sc_signal<sc_bv<1>> e_in_ack_o;
-    sc_signal<sc_bv<data_width_p>> e_out_data_o;
+    sc_signal<sc_bv<link_width_p>> e_out_data_o;
     sc_signal<sc_bv<1>> e_out_val_o;
     sc_signal<sc_bv<1>> e_out_ack_i;
-    sc_signal<sc_bv<data_width_p>> s_in_data_i;
+    sc_signal<sc_bv<link_width_p>> s_in_data_i;
     sc_signal<sc_bv<1>> s_in_val_i;
     sc_signal<sc_bv<1>> s_in_ack_o;
-    sc_signal<sc_bv<data_width_p>> s_out_data_o;
+    sc_signal<sc_bv<link_width_p>> s_out_data_o;
     sc_signal<sc_bv<1>> s_out_val_o;
     sc_signal<sc_bv<1>> s_out_ack_i;
-    sc_signal<sc_bv<data_width_p>> w_in_data_i;
+    sc_signal<sc_bv<link_width_p>> w_in_data_i;
     sc_signal<sc_bv<1>> w_in_val_i;
     sc_signal<sc_bv<1>> w_in_ack_o;
-    sc_signal<sc_bv<data_width_p>> w_out_data_o;
+    sc_signal<sc_bv<link_width_p>> w_out_data_o;
     sc_signal<sc_bv<1>> w_out_val_o;
     sc_signal<sc_bv<1>> w_out_ack_i;
 
-    router<x_id_p, y_id_p, data_width_p> *router0;
+    router<x_id_p, y_id_p> *router0;
 
     void rst(){
         rst_i.write("1");
@@ -50,8 +49,8 @@ SC_MODULE(router_tb){
     }
 
     void in(){
-        sc_bv<data_width_p> pack_n[4] = {"11111111", "00000100", "00010000", "10000000"};
-        sc_bv<data_width_p> pack_n2[4] = {"10000000", "00000100", "00010000", "10000000"};
+        sc_bv<link_width_p> pack_n[4] = {"11111111", "00000100", "00010000", "10000000"};
+        sc_bv<link_width_p> pack_n2[4] = {"10000000", "00000100", "00010000", "10000000"};
         l_in_val_i.write("0");
             wait(1, SC_NS);
         for(int i=0; i<4; i++){
@@ -183,7 +182,7 @@ SC_MODULE(router_tb){
         SC_THREAD(rst);
         sensitive << clk_i << rst_i;
 
-        router0 = new router<x_id_p, y_id_p, data_width_p>("router");
+        router0 = new router<x_id_p, y_id_p>("router");
 
         router0->clk_i(clk_i);  
         router0->rst_i(rst_i);     
