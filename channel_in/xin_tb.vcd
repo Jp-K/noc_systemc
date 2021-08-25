@@ -1,5 +1,5 @@
 $date
-     Aug 18, 2021       09:25:59
+     Aug 02, 2021       11:43:31
 $end
 
 $version
@@ -13,36 +13,18 @@ $end
 $scope module SystemC $end
 $var wire    1  aaaaa  clk       $end
 $var wire    1  aaaab  rst       $end
-$var wire    8  aaaac  l_in_data_i [7:0]  $end
-$var wire    1  aaaad  l_in_val_i       $end
-$var wire    1  aaaae  l_in_ack_o       $end
-$var wire    8  aaaaf  l_out_data_o [7:0]  $end
-$var wire    1  aaaag  l_out_val_o       $end
-$var wire    1  aaaah  l_out_ack_i       $end
-$var wire    8  aaaai  n_in_data_i [7:0]  $end
-$var wire    1  aaaaj  n_in_val_i       $end
-$var wire    1  aaaak  n_in_ack_o       $end
-$var wire    8  aaaal  n_out_data_o [7:0]  $end
-$var wire    1  aaaam  n_out_val_o       $end
-$var wire    1  aaaan  n_out_ack_i       $end
-$var wire    8  aaaao  e_in_data_i [7:0]  $end
-$var wire    1  aaaap  e_in_val_i       $end
-$var wire    1  aaaaq  e_in_ack_o       $end
-$var wire    8  aaaar  e_out_data_o [7:0]  $end
-$var wire    1  aaaas  e_out_val_o       $end
-$var wire    1  aaaat  e_out_ack_i       $end
-$var wire    8  aaaau  s_in_data_i [7:0]  $end
-$var wire    1  aaaav  s_in_val_i       $end
-$var wire    1  aaaaw  s_in_ack_o       $end
-$var wire    8  aaaax  s_out_data_o [7:0]  $end
-$var wire    1  aaaay  s_out_val_o       $end
-$var wire    1  aaaaz  s_out_ack_i       $end
-$var wire    8  aaaba  w_in_data_i [7:0]  $end
-$var wire    1  aaabb  w_in_val_i       $end
-$var wire    1  aaabc  w_in_ack_o       $end
-$var wire    8  aaabd  w_out_data_o [7:0]  $end
-$var wire    1  aaabe  w_out_val_o       $end
-$var wire    1  aaabf  w_out_ack_i       $end
+$var wire    8  aaaac  data_i [7:0]  $end
+$var wire    1  aaaad  val_i       $end
+$var wire    1  aaaae  ack_o       $end
+$var wire    1  aaaaf  req_l_o       $end
+$var wire    1  aaaag  req_n_o       $end
+$var wire    1  aaaah  req_e_o       $end
+$var wire    1  aaaai  req_s_o       $end
+$var wire    1  aaaaj  req_w_o       $end
+$var wire    4  aaaak  gnt_i [3:0]  $end
+$var wire    1  aaaal  rok_o       $end
+$var wire    4  aaaam  rd_i [3:0]  $end
+$var wire    8  aaaan  data_o [7:0]  $end
 $upscope $end
 $enddefinitions  $end
 
@@ -56,33 +38,15 @@ $dumpvars
 b0 aaaac
 0aaaad
 0aaaae
-b0 aaaaf
+0aaaaf
 0aaaag
 0aaaah
-b0 aaaai
+0aaaai
 0aaaaj
-0aaaak
-b0 aaaal
-0aaaam
-0aaaan
-b0 aaaao
-0aaaap
-0aaaaq
-b0 aaaar
-0aaaas
-0aaaat
-b0 aaaau
-0aaaav
-0aaaaw
-b0 aaaax
-0aaaay
-0aaaaz
-b0 aaaba
-0aaabb
-0aaabc
-b0 aaabd
-0aaabe
-0aaabf
+b0 aaaak
+0aaaal
+b0 aaaam
+b0 aaaan
 $end
 
 #500
@@ -92,391 +56,327 @@ $end
 1aaaaa
 0aaaab
 b11111111 aaaac
+1aaaad
 
 #1500
 0aaaaa
 
 #2000
 1aaaaa
-1aaaad
+1aaaae
+b100 aaaak
 
 #2500
 0aaaaa
 
 #3000
 1aaaaa
-1aaaae
+0aaaad
 
 #3500
 0aaaaa
+1aaaal
+b11111111 aaaan
 
 #4000
 1aaaaa
-0aaaad
+0aaaae
+b100 aaaam
 
 #4500
 0aaaaa
+1aaaah
 
 #5000
 1aaaaa
-0aaaae
+b10 aaaac
+1aaaad
 
 #5500
 0aaaaa
 
 #6000
 1aaaaa
-b100 aaaac
+1aaaae
 
 #6500
 0aaaaa
 
 #7000
 1aaaaa
-1aaaad
+0aaaad
 
 #7500
 0aaaaa
 
 #8000
 1aaaaa
-1aaaae
+0aaaae
 
 #8500
 0aaaaa
 
 #9000
 1aaaaa
-0aaaad
-b11111111 aaaar
+b100 aaaac
+1aaaad
 
 #9500
 0aaaaa
 
 #10000
 1aaaaa
-0aaaae
-1aaaas
+1aaaae
 
 #10500
 0aaaaa
 
 #11000
 1aaaaa
-b10000 aaaac
-1aaaat
+0aaaad
 
 #11500
 0aaaaa
 
 #12000
 1aaaaa
-1aaaad
-0aaaas
+0aaaae
 
 #12500
 0aaaaa
 
 #13000
 1aaaaa
-1aaaae
-0aaaat
+b10000000 aaaac
+1aaaad
 
 #13500
 0aaaaa
 
 #14000
 1aaaaa
-0aaaad
-b100 aaaar
-1aaaas
+1aaaae
 
 #14500
 0aaaaa
 
 #15000
 1aaaaa
-0aaaae
-1aaaat
+0aaaad
 
 #15500
 0aaaaa
 
 #16000
 1aaaaa
-b10000000 aaaac
-0aaaas
+0aaaae
 
 #16500
 0aaaaa
 
 #17000
 1aaaaa
+b0 aaaac
 1aaaad
-0aaaat
+b0 aaaak
 
 #17500
 0aaaaa
 
 #18000
 1aaaaa
-1aaaae
-b10000 aaaar
-1aaaas
 
 #18500
 0aaaaa
 
 #19000
 1aaaaa
-0aaaad
-1aaaat
 
 #19500
 0aaaaa
 
 #20000
 1aaaaa
-0aaaae
-0aaaas
 
 #20500
 0aaaaa
 
 #21000
 1aaaaa
-b0 aaaac
-0aaaat
 
 #21500
 0aaaaa
 
 #22000
 1aaaaa
-b10000000 aaaac
-b10000000 aaaar
-1aaaas
 
 #22500
 0aaaaa
 
 #23000
 1aaaaa
-1aaaad
-1aaaat
 
 #23500
 0aaaaa
 
 #24000
 1aaaaa
-1aaaae
-0aaaas
 
 #24500
 0aaaaa
 
 #25000
 1aaaaa
-0aaaad
-0aaaat
 
 #25500
 0aaaaa
 
 #26000
 1aaaaa
-0aaaae
-1aaaas
 
 #26500
 0aaaaa
 
 #27000
 1aaaaa
-b100 aaaac
-b0 aaaar
-1aaaat
 
 #27500
 0aaaaa
 
 #28000
 1aaaaa
-1aaaad
-0aaaas
 
 #28500
 0aaaaa
 
 #29000
 1aaaaa
-1aaaae
-0aaaat
 
 #29500
 0aaaaa
 
 #30000
 1aaaaa
-0aaaad
-b10000000 aaaax
 
 #30500
 0aaaaa
 
 #31000
 1aaaaa
-0aaaae
-1aaaay
 
 #31500
 0aaaaa
 
 #32000
 1aaaaa
-b10000 aaaac
-1aaaaz
 
 #32500
 0aaaaa
 
 #33000
 1aaaaa
-1aaaad
-0aaaay
 
 #33500
 0aaaaa
 
 #34000
 1aaaaa
-1aaaae
-0aaaaz
 
 #34500
 0aaaaa
 
 #35000
 1aaaaa
-0aaaad
-b100 aaaax
-1aaaay
 
 #35500
 0aaaaa
 
 #36000
 1aaaaa
-0aaaae
-1aaaaz
 
 #36500
 0aaaaa
 
 #37000
 1aaaaa
-b10000000 aaaac
-0aaaay
 
 #37500
 0aaaaa
 
 #38000
 1aaaaa
-1aaaad
-0aaaaz
 
 #38500
 0aaaaa
 
 #39000
 1aaaaa
-1aaaae
-b10000 aaaax
-1aaaay
 
 #39500
 0aaaaa
 
 #40000
 1aaaaa
-0aaaad
-1aaaaz
 
 #40500
 0aaaaa
 
 #41000
 1aaaaa
-0aaaae
-0aaaay
 
 #41500
 0aaaaa
 
 #42000
 1aaaaa
-b0 aaaac
-0aaaaz
 
 #42500
 0aaaaa
 
 #43000
 1aaaaa
-b10000000 aaaax
-1aaaay
 
 #43500
 0aaaaa
 
 #44000
 1aaaaa
-1aaaaz
 
 #44500
 0aaaaa
 
 #45000
 1aaaaa
-0aaaay
 
 #45500
 0aaaaa
 
 #46000
 1aaaaa
-0aaaaz
 
 #46500
 0aaaaa
 
 #47000
 1aaaaa
-1aaaay
 
 #47500
 0aaaaa
 
 #48000
 1aaaaa
-b0 aaaax
-1aaaaz
 
 #48500
 0aaaaa
 
 #49000
 1aaaaa
-0aaaay
 
 #49500
 0aaaaa
 
 #50000
 1aaaaa
-0aaaaz
 
 #50500
 0aaaaa
@@ -725,5 +625,53 @@ b0 aaaax
 1aaaaa
 
 #91500
+0aaaaa
+
+#92000
+1aaaaa
+
+#92500
+0aaaaa
+
+#93000
+1aaaaa
+
+#93500
+0aaaaa
+
+#94000
+1aaaaa
+
+#94500
+0aaaaa
+
+#95000
+1aaaaa
+
+#95500
+0aaaaa
+
+#96000
+1aaaaa
+
+#96500
+0aaaaa
+
+#97000
+1aaaaa
+
+#97500
+0aaaaa
+
+#98000
+1aaaaa
+
+#98500
+0aaaaa
+
+#99000
+1aaaaa
+
+#99500
 0aaaaa
 
